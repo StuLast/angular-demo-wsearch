@@ -1,9 +1,9 @@
-<div class="ui container">
-  <app-header></app-header>
+<div class="container">
+  <div class="box is-light">
+    <app-header></app-header>
+  </div>
 </div>
-<div class="ui container spaced">
+<div class="container">
   <app-search-bar (submitted)="onSearchTerm($event)"></app-search-bar>
-</div>
-<div class="ui container spaced">
-  <app-page-list></app-page-list> 
+  <app-page-list [pages]="pages"></app-page-list>
 </div>

@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WikipediaService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
-
-  search(term: string) {
-    return 'I am wikipedia search results'
-  }
+  search = (term: string) => {
+    const result = this.http.get('https://en.wikipedia.org/w/api.php', {
+      params: {
+        action: 'query',
+        format: 'json',
+        list: 'search',
+        utf8: '1',
+        srsearch: term,
+        origin: '*',
+      },
+    });
+    return result;
+  };
 }
