@@ -1,0 +1,13 @@
+<div class="ui segment">
+  
+  <form class="ui form searchBar" (submit)="onSubmit($event)">
+    <div class="inline field">
+      <label for="search">Search</label>
+      <input id="search" type="text" #searchTerm (input)="term = searchTerm.value" [value]="term" placeholder="Enter a search term"/>
+    </div>
+    <div class="three wide column">
+      <button class="ui button" type="submit">Submit</button>
+    </div>
+  </form>
+
+</div>
