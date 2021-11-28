@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { WikipediaService } from './wikipedia.service';
+import { IPage } from './page-list/page-list.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(
-    private wikipedia: WikipediaService
-  ) {}
-  
-  onSearchTerm = (term: string):void => {
-    const results = this.wikipedia.search(term);
-    console.log(results)
-  }
+  pages: IPage[] = [];
+  constructor(private wikipedia: WikipediaService) {}
+
+  onSearchTerm = (term: string): void => {
+    this.wikipedia.search(term).subscribe((response: IPage[]) => {
+      this.pages = response;
+    });
+  };
 }
