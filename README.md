@@ -1,5 +1,11 @@
 # Wsearch
 
+This demo app was built to explore the intracacies of API requests and the benefit of using defined interfaces with RxJS and RxJS pipes to "condition" the received data.  By definining the interface to be used at the point of request, only the required data is passed around between components and modules.  One key point to note is that the interface is defined with the "consuming" class, so that the file that contains the class also has the definitions of what is required to use that class.  There's no doubt that Typescript has brought maturity to Javascript OOP.
+
+A live demo of this app can be seen at [https://angular-demo-wikipedia-search.herokuapp.com/](https://angular-demo-wikipedia-search.herokuapp.com/).
+
+# Angular Stuff ...
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
